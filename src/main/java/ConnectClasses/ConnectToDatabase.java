@@ -1,3 +1,8 @@
+package ConnectClasses;
+
+import AccessClasses.AccessData;
+import AccessClasses.GetAccessData;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -9,12 +14,12 @@ public class ConnectToDatabase {
     GetAccessData getAccessDate;
 
     public ConnectToDatabase(AccessData accessData, GetAccessData getAccessData) {
-        this.accessData =  accessData;
+        this.accessData = accessData;
         this.getAccessDate = getAccessData;
     }
 
     // соединение с БД
-    public Connection getConnection(){
+    public Connection getConnection() {
         try {
             connection = DriverManager.getConnection(getAccessDate.getUrl());
             if (connection == null)

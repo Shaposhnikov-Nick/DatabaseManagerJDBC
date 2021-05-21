@@ -1,18 +1,20 @@
+package AccessClasses;
+
 import java.util.List;
 
 public class GetAccessData {
     // сервер базы данных
-    private   String HOST;
+    private String HOST;
     // имя базы данных
-    private   String DATABASENAME;
+    private String DATABASENAME;
     // имя пользователя
-    private  String USERNAME;
+    private String USERNAME;
     // пароль пользователя
-    private  String PASSWORD;
+    private String PASSWORD;
 
 
     // метод, записывающий значения полям доступа к БД
-    public  void returnGetAccessData(List<String> accessDataList){
+    public void returnGetAccessData(List<String> accessDataList) {
         HOST = accessDataList.get(0);
         DATABASENAME = accessDataList.get(1);
         USERNAME = accessDataList.get(2);
@@ -21,8 +23,8 @@ public class GetAccessData {
     }
 
     // строка с соединением с БД
-    public  String getUrl() {
-        return  "jdbc:postgresql://" + HOST + "/" + DATABASENAME +
+    public String getUrl() {
+        return "jdbc:postgresql://" + HOST + "/" + DATABASENAME +
                 "?user=" + USERNAME + "&password=" + PASSWORD;
     }
 
